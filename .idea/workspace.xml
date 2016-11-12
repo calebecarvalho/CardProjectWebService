@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2854fbe-a3cd-4191-aae2-082f576096d6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CardProject/example/HelloWorld.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CardProject.iws" />
@@ -68,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClienteConnector.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClienteConnector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MySQLConnector/ClienteConnector.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -115,6 +114,41 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="FaturaConnector.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/MySQLConnector/FaturaConnector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1054">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding>
+                <element signature="e#353#354#0" expanded="true" />
+                <element signature="e#381#382#0" expanded="true" />
+                <element signature="e#420#421#0" expanded="true" />
+                <element signature="e#454#455#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
+                <element signature="e#522#523#0" expanded="true" />
+                <element signature="e#572#573#0" expanded="true" />
+                <element signature="e#614#615#0" expanded="true" />
+                <element signature="e#650#651#0" expanded="true" />
+                <element signature="e#682#683#0" expanded="true" />
+                <element signature="e#732#733#0" expanded="true" />
+                <element signature="e#774#775#0" expanded="true" />
+                <element signature="e#809#810#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
+                <element signature="e#888#889#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+                <element signature="e#959#960#0" expanded="true" />
+                <element signature="e#986#987#0" expanded="true" />
+                <element signature="e#1027#1028#0" expanded="true" />
+                <element signature="e#1059#1060#0" expanded="true" />
+                <element signature="e#1117#1118#0" expanded="true" />
+                <element signature="e#1151#1152#0" expanded="true" />
+                <element signature="e#1225#1226#0" expanded="true" />
+                <element signature="e#1271#1272#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -140,6 +174,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/MySQLConnector/CardConnector.java" />
         <option value="$PROJECT_DIR$/src/MySQLConnector/ClienteConnector.java" />
+        <option value="$PROJECT_DIR$/src/MySQLConnector/FaturaConnector.java" />
       </list>
     </option>
   </component>
@@ -162,7 +197,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -712,7 +747,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1478986463712</updated>
-      <workItem from="1478986478585" duration="5076000" />
+      <workItem from="1478986478585" duration="5941000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1478993605912</created>
@@ -721,11 +756,18 @@
       <option name="project" value="LOCAL" />
       <updated>1478993605912</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="First Commit">
+      <created>1478993876814</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1478993876814</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5076000" />
+    <option name="totallyTimeSpent" value="5941000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -866,6 +908,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CardProject.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MySQLConnector/ClienteConnector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -907,6 +957,39 @@
             <element signature="e#1460#1461#0" expanded="true" />
             <element signature="e#1506#1507#0" expanded="true" />
             <element signature="e#1544#1545#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MySQLConnector/FaturaConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#381#382#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#732#733#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="e#888#889#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#959#960#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
+            <element signature="e#1151#1152#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1271#1272#0" expanded="true" />
           </folding>
         </state>
       </provider>
