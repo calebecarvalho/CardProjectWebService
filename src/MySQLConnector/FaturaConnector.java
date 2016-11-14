@@ -1,5 +1,5 @@
 package MySQLConnector;
-import java.util.ArrayList;
+
 /**
  * Created by Calebe Lustosa on 12/11/2016.
  */
@@ -10,8 +10,6 @@ public class FaturaConnector{
     private String dateAbert;
     private String dataFech;
     private boolean paga;
-    private ArrayList<FaturaConnector> lancamentos;
-
 
     public int getIndex() {
         return index;
@@ -53,13 +51,6 @@ public class FaturaConnector{
         this.paga = paga;
     }
 
-    public ArrayList<FaturaConnector> getLancamentos() {
-        return lancamentos;
-    }
-
-    public void setLancamentos(ArrayList<FaturaConnector> lancamentos) {
-        this.lancamentos = lancamentos;
-    }
 
     @Override
     public String toString() {

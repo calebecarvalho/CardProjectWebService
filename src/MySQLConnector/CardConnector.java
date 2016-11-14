@@ -3,6 +3,7 @@ package MySQLConnector;
 /**
  * Created by Calebe Lustosa on 10/11/2016.
  */
+
 public class CardConnector {
 
     private  int index;
