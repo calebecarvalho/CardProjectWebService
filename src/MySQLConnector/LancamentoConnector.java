@@ -10,6 +10,7 @@ public class LancamentoConnector {
     private String hora;
     private String valor;
     private String numParcela;
+    private int fatura;
 
     public int getIndex() {
         return index;
@@ -29,6 +30,14 @@ public class LancamentoConnector {
 
     public String getData() {
         return data;
+    }
+
+    public int getFatura() {
+        return fatura;
+    }
+
+    public void setFatura(int fatura) {
+        this.fatura = fatura;
     }
 
     public void setData(String data) {
@@ -68,6 +77,7 @@ public class LancamentoConnector {
                 ", hora='" + hora + '\'' +
                 ", valor='" + valor + '\'' +
                 ", numParcela='" + numParcela + '\'' +
+                ", fatura=" + fatura +
                 '}';
     }
 }
