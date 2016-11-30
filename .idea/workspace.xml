@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a2854fbe-a3cd-4191-aae2-082f576096d6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MySQLConnector/CardConnector.java" afterPath="$PROJECT_DIR$/src/MySQLConnector/CardConnector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MySQLTranslator/CartaoTranslator.java" afterPath="$PROJECT_DIR$/src/MySQLTranslator/CartaoTranslator.java" />
     </list>
     <ignored path="CardProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -720,7 +718,7 @@
       <updated>1478986463712</updated>
       <workItem from="1478986478585" duration="6016000" />
       <workItem from="1479155785046" duration="2588000" />
-      <workItem from="1480529868182" duration="4721000" />
+      <workItem from="1480529868182" duration="4758000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1478993605912</created>
@@ -757,11 +755,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479158278070</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Novas classes">
+      <created>1480534654808</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1480534654808</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13325000" />
+    <option name="totallyTimeSpent" value="13362000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -820,7 +825,8 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="2 New Classes" />
     <MESSAGE value="Quick Bug Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quick Bug Fixes" />
+    <MESSAGE value="Novas classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Novas classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
