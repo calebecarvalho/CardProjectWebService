@@ -9,6 +9,7 @@ public class CardConnector {
     private  int index;
     private String numCartao;
     private String codSeg;
+    private String senha;
     private String bandeira;
     private String limite;
     private String validade;
@@ -78,6 +79,14 @@ public class CardConnector {
 
     public void setBloq(boolean bloq) {
         this.bloq = bloq;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     @Override
