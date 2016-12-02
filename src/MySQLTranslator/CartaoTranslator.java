@@ -45,7 +45,10 @@ public class CartaoTranslator {
             preparaConexao();
 
         try {
-            String querry = "";         //PRECISA FAZER A QUERRY
+            String querry = "SELECT cartis.index, catis.NumCartao, cartis.NumCartao, cartis.Senha, catis.Bandeira, cartis.Validade, cartis.Limite, cartis.Bloqueado FROM cartoes cartao\n"+
+                            "JOIN conta NumConta on fk_NumConta_ct = numConta.id\n"+
+                            "JOIN cliente CPF on fk_CPF_ct = cliente.id\n"+
+                            "WHERE cliente.CPF = ?;";
 
 
 
@@ -65,7 +68,7 @@ public class CartaoTranslator {
                     conector.setBandeira(resultado.getString("Bandeira"));
                     conector.setValidade(resultado.getString("Validade"));
                     conector.setLimite(resultado.getString("Limite"));
-                    conector.setBloq(resultado.getBoolean("bloqueado"));
+                    conector.setBloq(resultado.getBoolean("Bloqueado"));
 
                     cartoes.add(conector);
                 }while (resultado.next());
