@@ -35,7 +35,7 @@ public class ClienteTranslator {
         }
     }
 
-    public boolean verificaAcessoCliente(String CPF, String aprovado){
+    public boolean verificaAcessoCliente(String CPF, String senha){
 
         boolean existente = false;
 
@@ -47,7 +47,7 @@ public class ClienteTranslator {
             PreparedStatement preparedStatement = conexao.prepareStatement(querry);
 
             preparedStatement.setString(1, CPF);
-            preparedStatement.setString(2, aprovado);
+            preparedStatement.setString(2, senha);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -72,7 +72,7 @@ public class ClienteTranslator {
        fechaConexao();
         return false;
     }
-    public ClientConnector verificaCliente(String CPF, String aprovado){
+    public ClientConnector verificaCliente(String CPF, String senha){
 
         ClientConnector clientConnector = null;
         try{
@@ -86,7 +86,7 @@ public class ClienteTranslator {
 
             preparedStatement = conexao.prepareStatement(querry);
             preparedStatement.setString(1, CPF);
-            preparedStatement.setString(2, aprovado);
+            preparedStatement.setString(2, senha);
 
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){

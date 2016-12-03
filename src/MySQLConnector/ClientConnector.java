@@ -3,7 +3,7 @@ package MySQLConnector;
 /**
  * Created by Calebe Lustosa on 10/11/2016.
  */
-public class ClienteConnector {
+public class ClientConnector {
 
     private int index;
     private String cpf;
@@ -90,7 +90,7 @@ public class ClienteConnector {
 
     @Override
     public String toString() {
-        return "ClienteConnector{" +
+        return "ClientConnector{" +
                 "index=" + index +
                 ", cpf='" + cpf + '\'' +
                 ", nome='" + nome + '\'' +

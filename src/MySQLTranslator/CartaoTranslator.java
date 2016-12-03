@@ -6,6 +6,7 @@ import java.util.ArrayList;
 /**
  * Created by CalebeLustosa on 14/11/2016.
  */
+
 public class CartaoTranslator {
 
     private static final String END_BD = "jdbc:mysql://localhost:3306/projeto_d";
@@ -49,8 +50,6 @@ public class CartaoTranslator {
                             "JOIN conta NumConta on fk_NumConta_ct = numConta.id\n"+
                             "JOIN cliente CPF on fk_CPF_ct = cliente.id\n"+
                             "WHERE cliente.CPF = ?;";
-
-
 
             preparedStatement = conexao.prepareStatement(querry);
             preparedStatement.setString(1, CPF);
@@ -139,10 +138,4 @@ public class CartaoTranslator {
         return false;
 
     }
-
-
-
-
-
-
 }

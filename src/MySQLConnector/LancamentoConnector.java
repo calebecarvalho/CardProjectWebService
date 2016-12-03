@@ -1,4 +1,7 @@
 package MySQLConnector;
+
+import java.sql.Date;
+
 /**
  * Created by Calebe Lustosa on 14/11/2016.
  */
@@ -40,7 +43,7 @@ public class LancamentoConnector {
         this.fatura = fatura;
     }
 
-    public void setData(String data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
