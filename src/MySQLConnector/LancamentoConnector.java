@@ -9,7 +9,7 @@ public class LancamentoConnector {
 
     private int index;
     private String numLancamento;
-    private String data;
+    private Date data;
     private String hora;
     private String valor;
     private String numParcela;
@@ -31,7 +31,7 @@ public class LancamentoConnector {
         this.numLancamento = numLancamento;
     }
 
-    public String getData() {
+    public Date getData() {
         return data;
     }
 

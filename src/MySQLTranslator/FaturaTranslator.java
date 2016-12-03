@@ -4,7 +4,7 @@ import MySQLConnector.LancamentoConnector;
 import java.sql.*;
 import java.util.ArrayList;
 /**
- * Created by RosyLustosa on 14/11/2016.
+ * Created by CalebeLustosa on 14/11/2016.
  */
 public class FaturaTranslator {
 
@@ -73,7 +73,46 @@ public class FaturaTranslator {
         fechaConexao();
         return lancamentos;
     }
+    public ArrayList<FaturaConnector> recebeFatura (String NumCartao){
+
+        ArrayList<FaturaConnector> faturas = null;
+
+        if (conexao == null){
+            preparaConexao();
+        }
+        try {
+            String querry = "SELECT lancamento.NumLancamento, lancamento.Data, lancamento.Valor, lancamento,NumParcelas\n"+
+                            "FROM lancamento lancamento\n"+
+                            "JOIN estabelecimentos NumEstabelecimento ON estabelcimentos.NumEstabelecimento = fk_CodEstabelecimento_lan\n"+
+                            "WHERE NumCartao = ?;";
+
+            preparedStatement = conexao.prepareStatement(querry);
+            preparedStatement.setString('1', NumCartao);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()){
+                faturas = new ArrayList<>();
+                FaturaConnector faturaConnector = new FaturaConnector();
+
+                do{
+                    faturaConnector.setIndex(resultSet.getInt("index"));
+                    faturaConnector.setCodFatura(resultSet.getString("codFatura"));
+                    faturaConnector.setDataFech(resultSet.getDate("DataFech"));
+                    faturaConnector.setDateAbert(resultSet.getDate("DataAbert"));
+                    faturaConnector.setPaga(resultSet.getBoolean("paga"));
+                    faturaConnector.setLancamentos(recebeLancamentos(faturaConnector.getIndex()));
+
+                    faturas.add(faturaConnector);
+                }while(resultSet.next());
+            }else {
+                fechaConexao();
+                return faturas;
+            }
+        }catch (Exception E){
+            E.getStackTrace();
+        }
+        fechaConexao();
+        return faturas;
+    }
 }
-
-
-

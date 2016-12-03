@@ -1,4 +1,5 @@
 package MySQLConnector;
+import java.sql.Date;
 import java.util.ArrayList;
 /**
  * Created by Calebe Lustosa on 12/11/2016.
@@ -7,10 +8,10 @@ public class FaturaConnector{
 
     private int index;
     private String codFatura;
-    private String dateAbert;
-    private String dataFech;
+    private Date dateAbert;
+    private Date dataFech;
     private boolean paga;
-    private ArrayList<FaturaConnector> lancamentos;
+    private ArrayList<LancamentoConnector> lancamentos;
 
 
     public int getIndex() {
@@ -29,19 +30,19 @@ public class FaturaConnector{
         this.codFatura = codFatura;
     }
 
-    public String getDateAbert() {
+    public Date getDateAbert() {
         return dateAbert;
     }
 
-    public void setDateAbert(String dateAbert) {
+    public void setDateAbert(Date dateAbert) {
         this.dateAbert = dateAbert;
     }
 
-    public String getDataFech() {
+    public Date getDataFech() {
         return dataFech;
     }
 
-    public void setDataFech(String dataFech) {
+    public void setDataFech(Date dataFech) {
         this.dataFech = dataFech;
     }
 
@@ -53,11 +54,11 @@ public class FaturaConnector{
         this.paga = paga;
     }
 
-    public ArrayList<FaturaConnector> getLancamentos() {
+    public ArrayList<LancamentoConnector> getLancamentos() {
         return lancamentos;
     }
 
-    public void setLancamentos(ArrayList<FaturaConnector> lancamentos) {
+    public void setLancamentos(ArrayList<LancamentoConnector> lancamentos) {
         this.lancamentos = lancamentos;
     }
 
