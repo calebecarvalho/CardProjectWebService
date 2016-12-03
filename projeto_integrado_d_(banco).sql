@@ -30,7 +30,9 @@ CREATE TABLE `cartis` (
   `Limite` int(11) NOT NULL,
   `DataVenc` date NOT NULL,
   `Bloqueado` tinyint(4) NOT NULL,
+  `Index` int(11) NOT NULL,
   PRIMARY KEY (`NumCartao`),
+  KEY `Index` (`Index`),
   CONSTRAINT `fk_CPF_ct` FOREIGN KEY (`NumCartao`) REFERENCES `cliente` (`CPF`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_NumConta_ct` FOREIGN KEY (`NumCartao`) REFERENCES `conta` (`NumConta`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -61,7 +63,9 @@ CREATE TABLE `cliente` (
   `Email` varchar(45) DEFAULT NULL,
   `TelefoneRes.` int(10) NOT NULL,
   `Celular` int(11) DEFAULT NULL,
+  `Index` int(11) DEFAULT NULL,
   PRIMARY KEY (`CPF`),
+  KEY `Index` (`Index`),
   CONSTRAINT `fk_NumConta_cl` FOREIGN KEY (`CPF`) REFERENCES `conta` (`NumConta`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -84,10 +88,12 @@ DROP TABLE IF EXISTS `conta`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `conta` (
   `NumConta` int(11) NOT NULL,
+  `Index` int(11) DEFAULT NULL,
   `SaldoConta` int(11) NOT NULL,
   `StatusConta` varchar(20) NOT NULL,
   `SenhaConta` int(6) NOT NULL,
   PRIMARY KEY (`NumConta`),
+  KEY `Index` (`Index`),
   CONSTRAINT `fk_CPF_cta` FOREIGN KEY (`NumConta`) REFERENCES `cliente` (`CPF`) ON DELETE NO ACTION ON UPDATE CASCADE,
   CONSTRAINT `fk_NumCartao_cta` FOREIGN KEY (`NumConta`) REFERENCES `cartis` (`NumCartao`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -111,11 +117,13 @@ DROP TABLE IF EXISTS `estabelecimentos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `estabelecimentos` (
   `CodEstabelecimento` int(11) NOT NULL,
+  `Index` int(11) DEFAULT NULL,
   `CNPJ` int(14) NOT NULL,
   `NomeEstab.` varchar(100) DEFAULT NULL,
   `Logradouro` varchar(120) DEFAULT NULL,
   `Imagem` longblob,
-  PRIMARY KEY (`CodEstabelecimento`)
+  PRIMARY KEY (`CodEstabelecimento`),
+  KEY `Index` (`Index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -137,11 +145,13 @@ DROP TABLE IF EXISTS `faturas`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `faturas` (
   `CodFatura` int(11) NOT NULL,
+  `Index` int(11) DEFAULT NULL,
   `DataFechamento` date DEFAULT NULL,
   PRIMARY KEY (`CodFatura`),
+  KEY `Index` (`Index`),
   CONSTRAINT `fk_NumCartao_fat` FOREIGN KEY (`CodFatura`) REFERENCES `cartis` (`NumCartao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_NumConta_fat` FOREIGN KEY (`CodFatura`) REFERENCES `conta` (`NumConta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_NumLancamento_fat` FOREIGN KEY (`CodFatura`) REFERENCES `lançamentos` (`NumLancamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_NumLancamento_fat` FOREIGN KEY (`CodFatura`) REFERENCES `lancamento` (`NumLancamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -163,11 +173,13 @@ DROP TABLE IF EXISTS `funcionarios`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `funcionarios` (
   `CodFuncionario` int(11) NOT NULL,
+  `Index` int(11) DEFAULT NULL,
   `NomeFuncionario` varchar(30) NOT NULL,
   `Cargo` varchar(10) DEFAULT NULL,
   `NivelAcesso` int(1) NOT NULL,
   `Senha` int(5) NOT NULL,
-  PRIMARY KEY (`CodFuncionario`)
+  PRIMARY KEY (`CodFuncionario`),
+  KEY `Index` (`Index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -181,29 +193,31 @@ LOCK TABLES `funcionarios` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `lançamentos`
+-- Table structure for table `lancamento`
 --
 
-DROP TABLE IF EXISTS `lançamentos`;
+DROP TABLE IF EXISTS `lancamento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `lançamentos` (
+CREATE TABLE `lancamento` (
   `NumLancamento` int(11) NOT NULL,
   `Data` datetime NOT NULL,
   `Valor` int(11) NOT NULL,
   `NumParcelas` int(11) DEFAULT NULL,
+  `Index` int(11) NOT NULL,
   PRIMARY KEY (`NumLancamento`),
+  KEY `Index` (`Index`),
   CONSTRAINT `fk_CodEstabelecimento_lan` FOREIGN KEY (`NumLancamento`) REFERENCES `estabelecimentos` (`CodEstabelecimento`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `lançamentos`
+-- Dumping data for table `lancamento`
 --
 
-LOCK TABLES `lançamentos` WRITE;
-/*!40000 ALTER TABLE `lançamentos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `lançamentos` ENABLE KEYS */;
+LOCK TABLES `lancamento` WRITE;
+/*!40000 ALTER TABLE `lancamento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lancamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -223,4 +237,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-02 17:40:20
+-- Dump completed on 2016-12-03 13:39:40
