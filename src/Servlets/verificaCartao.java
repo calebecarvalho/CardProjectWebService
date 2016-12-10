@@ -58,6 +58,6 @@ public class verificaCartao extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("c:/temp/erroVerificaCartao.jsp");
+        response.sendRedirect("/temp/erro.jsp");
     }
 }

@@ -62,6 +62,6 @@ public class verificaFatura extends HttpServlet{
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        response.sendRedirect("c:/temp/erroVerificaFatura.jsp");
+        response.sendRedirect("/temp/erro.jsp");
     }
 }
