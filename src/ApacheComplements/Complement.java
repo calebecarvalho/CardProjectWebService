@@ -7,7 +7,8 @@ import java.text.ParseException;
  * Created by CalebeLustosa on 10/12/2016.
  */
 public class Complement {
-    public String normalizaCPF (String CPF){
+
+    public String normaliza (String CPF){
         String nrml = CPF;
         while(nrml.indexOf("-") != -1){
             if (nrml.indexOf("-") != 0){

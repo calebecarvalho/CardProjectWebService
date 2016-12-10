@@ -72,7 +72,7 @@ public class ClienteTranslator {
        fechaConexao();
         return false;
     }
-    public ClientConnector verificaCliente(String CPF, String senha){
+    public ClientConnector verificaCliente(String CPF){
 
         ClientConnector clientConnector = null;
         try{
@@ -86,7 +86,6 @@ public class ClienteTranslator {
 
             preparedStatement = conexao.prepareStatement(querry);
             preparedStatement.setString(1, CPF);
-            preparedStatement.setString(2, senha);
 
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
