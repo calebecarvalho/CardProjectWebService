@@ -42,6 +42,6 @@ public class clienteInfoWeb extends HttpServlet {
     }
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/temp/erro.jsp");
+        response.sendRedirect("temp/erro.jsp");
     }
 }

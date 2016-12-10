@@ -10,13 +10,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import MySQLConnector.ClientConnector;
 import MySQLTranslator.ClienteTranslator;
-import com.google.gson.Gson;
 import ApacheComplements.Complement;
+import com.google.gson.Gson;
 /**
  * Created by CalebeLustosa on 09/12/2016.
  */
 @WebServlet(name = "criaClienteWeb", urlPatterns = {"/criaClienteWeb"})
 public class criaClienteWeb extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         try{
@@ -30,7 +31,7 @@ public class criaClienteWeb extends HttpServlet {
             String confSenha = request.getParameter("confirmacao");
             if(!(request.getParameter("senha").equals(confSenha))){
                 request.setAttribute("ERRO", "Repita a mesma senha nos campos");
-                RequestDispatcher dispatcher = request.getRequestDispatcher("inicial.jsp");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
                 dispatcher.forward(request, response);
             }
 
@@ -50,7 +51,8 @@ public class criaClienteWeb extends HttpServlet {
             E.getStackTrace();
         }
     }
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/temp/erro.jsp");
+        response.sendRedirect("temp/erro.jsp");
     }
 }

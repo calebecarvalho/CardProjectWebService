@@ -38,7 +38,7 @@ public class verificaUsuario extends HttpServlet{
                 saida.print(1001);
                 return ;
             }
-            ClientConnector clientConnector = clienteTranslator.verificaCliente(CPF, senha);
+            ClientConnector clientConnector = clienteTranslator.verificaCliente(CPF);
 
             if(clientConnector == null){
                 saida.print(1001);
@@ -53,7 +53,7 @@ public class verificaUsuario extends HttpServlet{
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
-        response.sendRedirect("/temp/erro.jsp");
+        response.sendRedirect("temp/erro.jsp");
     }
 
 
