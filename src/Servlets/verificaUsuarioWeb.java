@@ -26,23 +26,23 @@ public class verificaUsuarioWeb extends HttpServlet {
 
         if (CPF == null){
             request.setAttribute("ERRO","Campo de CPF não pode ser vazio");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("validacao.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
             dispatcher.forward(request,response);
         }
         if (senha == null){
             request.setAttribute("ERRO","Campo de senha não pode ser vazio");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("validacao.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
             dispatcher.forward(request,response);
         }
         ClienteTranslator clienteTranslator = new ClienteTranslator();
         boolean sucesso = clienteTranslator.verificaAcessoCliente(CPF,senha);
 
         if(sucesso){
-            RequestDispatcher dispatcher = request.getRequestDispatcher("inical.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 
         }else {
             request.setAttribute("ERRO","Informações de login inválidos");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("inicial.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
             dispatcher.forward(request,response);
         }
 
