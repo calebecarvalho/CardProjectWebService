@@ -114,8 +114,8 @@ public class CartaoTranslator {
         fechaConexao();
         return false;
     }
-    public Boolean bloquear(String numero){
-        if(!bloqueado(numero))
+    public Boolean bloquear(String NumCartao){
+        if(!bloqueado(NumCartao))
             return false;
 
         if (conexao == null)
@@ -125,7 +125,7 @@ public class CartaoTranslator {
             String querry = "UPDATE cartoes SET bloqueado = 0 WHERE NumCartao = ?";
 
             preparedStatement = conexao.prepareStatement(querry);
-            preparedStatement.setString(1, numero);
+            preparedStatement.setString(1, NumCartao);
 
             int ps = preparedStatement.executeUpdate();
             if(ps > 0)
