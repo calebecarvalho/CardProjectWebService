@@ -83,7 +83,7 @@ public class FaturaTranslator {
         try {
             String querry = "SELECT lancamento.NumLancamento, lancamento.Data, lancamento.Valor, lancamento,NumParcelas\n"+
                             "FROM lancamento lancamento\n"+
-                            "JOIN estabelecimentos NumEstabelecimento ON estabelcimentos.NumEstabelecimento = fk_CodEstabelecimento_lan\n"+
+                            "JOIN cartis NumCartao ON cartis.NumCartao = fk_NumCartao_lan\n"+
                             "WHERE NumCartao = ?;";
 
             preparedStatement = conexao.prepareStatement(querry);

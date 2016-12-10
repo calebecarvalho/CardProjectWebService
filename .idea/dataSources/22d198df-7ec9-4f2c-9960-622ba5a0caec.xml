@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - projeto_d@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="projeto_d">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="sakila"/>
+    <schema id="6" name="sys"/>
+    <schema id="7" name="world"/>
+    <table id="8" parent="1" name="cartis"/>
+    <table id="9" parent="1" name="cliente"/>
+    <table id="10" parent="1" name="conta"/>
+    <table id="11" parent="1" name="estabelecimentos"/>
+    <table id="12" parent="1" name="faturas"/>
+    <table id="13" parent="1" name="funcionarios"/>
+    <table id="14" parent="1" name="lancamento"/>
+    <column id="15" parent="8" name="NumCartao">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="16" parent="8" name="Cod_Seg">
+      <mandatory>1</mandatory>
+      <data-type>int(3)|0</data-type>
+    </column>
+    <column id="17" parent="8" name="Bandeira">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="18" parent="8" name="Internacional">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(4)|0</data-type>
+    </column>
+    <column id="19" parent="8" name="Limite">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="20" parent="8" name="DataVenc">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="21" parent="8" name="Bloqueado">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(4)|0</data-type>
+    </column>
+    <key id="22" parent="8" name="PRIMARY">
+      <columns>NumCartao</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="23" parent="8" name="fk_CPF_ct">
+      <columns>NumCartao</columns>
+      <ref-key>~.cliente.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="24" parent="8" name="fk_NumConta_ct">
+      <columns>NumCartao</columns>
+      <ref-key>~.conta.PRIMARY</ref-key>
+      <cascade-update-rule>update</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="25" parent="9" name="CPF">
+      <mandatory>1</mandatory>
+      <data-type>int(12)|0</data-type>
+    </column>
+    <column id="26" parent="9" name="Nome">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="27" parent="9" name="Senha">
+      <mandatory>1</mandatory>
+      <data-type>int(6)|0</data-type>
+    </column>
+    <column id="28" parent="9" name="CEP">
+      <data-type>int(8)|0</data-type>
+    </column>
+    <column id="29" parent="9" name="Endereço">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="30" parent="9" name="Email">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="31" parent="9" name="TelefoneRes.">
+      <mandatory>1</mandatory>
+      <data-type>int(10)|0</data-type>
+    </column>
+    <column id="32" parent="9" name="Celular">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="33" parent="9" name="PRIMARY">
+      <columns>CPF</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="34" parent="9" name="fk_NumConta_cl">
+      <columns>CPF</columns>
+      <ref-key>~.conta.PRIMARY</ref-key>
+      <cascade-update-rule>update</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="35" parent="10" name="NumConta">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="36" parent="10" name="SaldoConta">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="37" parent="10" name="StatusConta">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="38" parent="10" name="SenhaConta">
+      <mandatory>1</mandatory>
+      <data-type>int(6)|0</data-type>
+    </column>
+    <key id="39" parent="10" name="PRIMARY">
+      <columns>NumConta</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="40" parent="10" name="fk_CPF_cta">
+      <columns>NumConta</columns>
+      <ref-key>~.cliente.PRIMARY</ref-key>
+      <cascade-update-rule>update</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="41" parent="10" name="fk_NumCartao_cta">
+      <columns>NumConta</columns>
+      <ref-key>~.cartis.PRIMARY</ref-key>
+      <cascade-update-rule>update</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="42" parent="11" name="CodEstabelecimento">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="43" parent="11" name="CNPJ">
+      <mandatory>1</mandatory>
+      <data-type>int(14)|0</data-type>
+    </column>
+    <column id="44" parent="11" name="NomeEstab.">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="45" parent="11" name="Logradouro">
+      <data-type>varchar(120)|0</data-type>
+    </column>
+    <column id="46" parent="11" name="Imagem">
+      <data-type>longblob|0</data-type>
+    </column>
+    <key id="47" parent="11" name="PRIMARY">
+      <columns>CodEstabelecimento</columns>
+      <primary>1</primary>
+    </key>
+    <column id="48" parent="12" name="CodFatura">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="49" parent="12" name="DataFechamento">
+      <data-type>date|0</data-type>
+    </column>
+    <key id="50" parent="12" name="PRIMARY">
+      <columns>CodFatura</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="51" parent="12" name="fk_NumCartao_fat">
+      <columns>CodFatura</columns>
+      <ref-key>~.cartis.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="52" parent="12" name="fk_NumConta_fat">
+      <columns>CodFatura</columns>
+      <ref-key>~.conta.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="53" parent="12" name="fk_NumLancamento_fat">
+      <columns>CodFatura</columns>
+      <ref-key>~.lancamento.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="54" parent="13" name="CodFuncionario">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="55" parent="13" name="NomeFuncionario">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="56" parent="13" name="Cargo">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="57" parent="13" name="NivelAcesso">
+      <mandatory>1</mandatory>
+      <data-type>int(1)|0</data-type>
+    </column>
+    <column id="58" parent="13" name="Senha">
+      <mandatory>1</mandatory>
+      <data-type>int(5)|0</data-type>
+    </column>
+    <key id="59" parent="13" name="PRIMARY">
+      <columns>CodFuncionario</columns>
+      <primary>1</primary>
+    </key>
+    <column id="60" parent="14" name="NumLancamento">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="61" parent="14" name="Data">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="62" parent="14" name="Valor">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="63" parent="14" name="NumParcelas">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="64" parent="14" name="Index">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="65" parent="14" name="Index_UNIQUE">
+      <columns>Index</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="66" parent="14" name="PRIMARY">
+      <columns>NumLancamento</columns>
+      <primary>1</primary>
+    </key>
+    <key id="67" parent="14" name="Index_UNIQUE">
+      <columns>Index</columns>
+      <underlying-index>Index_UNIQUE</underlying-index>
+    </key>
+    <foreign-key id="68" parent="14" name="fk_CodEstabelecimento_lan">
+      <columns>NumLancamento</columns>
+      <ref-key>~.estabelecimentos.PRIMARY</ref-key>
+      <cascade-update-rule>no_action</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>
