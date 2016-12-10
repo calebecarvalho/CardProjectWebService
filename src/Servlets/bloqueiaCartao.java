@@ -44,7 +44,7 @@ public class bloqueiaCartao extends HttpServlet {
             }
 
             CartaoTranslator cartaoTranslator = new CartaoTranslator();
-            if(cartaoTranslator.bloquear(NumCartao)){
+            if(cartaoTranslator.bloquearCartao("NumCartao")){
                 saida.print(1000);
                 return;
             }

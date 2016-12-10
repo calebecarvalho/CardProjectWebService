@@ -15,6 +15,7 @@ public class CartaoTranslator {
 
     private Connection conexao = null;
     private PreparedStatement preparedStatement = null;
+    private String numCartao;
 
     private void preparaConexao() {
         try {
@@ -131,6 +132,7 @@ public class CartaoTranslator {
             if(ps > 0)
                 fechaConexao();
                 return true;
+
         }catch (Exception E){
             E.printStackTrace();
         }
@@ -138,4 +140,30 @@ public class CartaoTranslator {
         return false;
 
     }
+    public Boolean bloquearCartao(String NumCartao){
+        if(!bloqueado(NumCartao))
+            return false;
+
+        if (conexao == null)
+            preparaConexao();
+
+        try {
+            String querry = "UPDATE cartoes SET bloqueado = 0 WHERE NumCartao = ?";
+
+            preparedStatement = conexao.prepareStatement(querry);
+            preparedStatement.setString(1, NumCartao);
+
+            int ps = preparedStatement.executeUpdate();
+            if(ps > 0)
+                fechaConexao();
+            return true;
+
+        }catch (Exception E){
+            E.printStackTrace();
+        }
+        fechaConexao();
+        return false;
+
+    }
+
 }
