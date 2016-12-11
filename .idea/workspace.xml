@@ -106,8 +106,6 @@
         <option value="$PROJECT_DIR$/src/Servlets/ClienteInfoWeb.java" />
         <option value="$PROJECT_DIR$/src/MySQLTranslator/ClienteTranslator.java" />
         <option value="$PROJECT_DIR$/src/Servlets/clienteInfoWeb.java" />
-<<<<<<< Temporary merge branch 1
-=======
         <option value="$PROJECT_DIR$/src/Servlets/criaClienteWeb.java" />
         <option value="$PROJECT_DIR$/src/ApacheComplements/Complement.java" />
       </list>
@@ -750,11 +748,11 @@
       <method />
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="JAR Application.javax.servlet-api-3.1.0.jar" />
+      <item index="0" class="java.lang.String" itemvalue="JAR Application.javax.servlet-api-3.1.0.jar"></item>
     </list>
     <recent_temporary>
       <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JAR Application.javax.servlet-api-3.1.0.jar" />
+        <item index="0" class="java.lang.String" itemvalue="JAR Application.javax.servlet-api-3.1.0.jar" ></item>
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
