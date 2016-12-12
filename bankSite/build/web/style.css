@@ -1,6 +1,4 @@
-body {
-  background: white;
-}
+
 
 body {
   text-align: center;
@@ -11,7 +9,7 @@ body {
 
 header {
   text-align: center;
-  background: #FFA500;
+  background: #708090;
   margin: 20px 0;
   padding: 15px;
 }

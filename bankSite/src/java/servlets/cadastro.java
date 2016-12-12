@@ -35,13 +35,13 @@ public class cadastro extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        int cpf = Integer.parseInt(request.getParameter("cpf"));
+        int cpf = Integer.parseInt(request.getParameter("cpf_insert"));
         String nome = request.getParameter("nome");
         int senha = Integer.parseInt(request.getParameter("senha"));
         int cep = Integer.parseInt(request.getParameter("cep"));
-        String endereco = request.getParameter("endereco");
+        String endereco = request.getParameter("end");
         String email = request.getParameter("email");
-        int telefoneres = Integer.parseInt(request.getParameter("telefoneres"));
+        int telefoneres = Integer.parseInt(request.getParameter("telefone"));
         int celular = Integer.parseInt(request.getParameter("celular"));
         int index = Integer.parseInt(request.getParameter("index"));
         

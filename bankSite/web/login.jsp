@@ -10,15 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="style.css" rel="stylesheet" type="text/css">
-        <title>Tela de Login</title>
-
+        <link href="ifundo.css" rel="stylesheet" type="text/css">
+        <title>Login</title>
+        
     </head>
     <body>
 
-        <header>
-         Bem vindo!
-         Faça seu login!
-        </header>
+        <header>Bem vindo! Faça seu login!</header>
 
         
         <form action="Login">

@@ -3,8 +3,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Tela de Gerenciamento</title>
+        <title>Gerenciamento</title>
         <link href="menuS.css" rel="stylesheet" type="text/css">
+        <link href="ifundo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
